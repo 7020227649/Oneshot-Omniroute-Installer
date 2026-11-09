@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+cd /opt/one-shot-omniroute
+docker compose up -d
