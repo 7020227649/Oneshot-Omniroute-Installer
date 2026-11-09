@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+docker ps --filter name=one-shot-omniroute
+docker inspect --format 'health: {{.State.Health.Status}}' one-shot-omniroute 2>/dev/null || true
+free -h
