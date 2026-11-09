@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+mkdir -p /var/backups/one-shot-omniroute
+tar czf "/var/backups/one-shot-omniroute/omniroute-$(date +%Y%m%d-%H%M%S).tar.gz" -C /opt/one-shot-omniroute .env
+tar czf "/var/backups/one-shot-omniroute/omniroute-data-$(date +%Y%m%d-%H%M%S).tar.gz" -C /var/lib/one-shot-omniroute app redis
