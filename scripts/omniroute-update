@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+cd /opt/one-shot-omniroute
+mkdir -p /var/backups/one-shot-omniroute
+tar czf "/var/backups/one-shot-omniroute/pre-update-$(date +%Y%m%d-%H%M%S).tar.gz" .env /var/lib/one-shot-omniroute 2>/dev/null || true
+docker compose pull
+docker compose up -d
